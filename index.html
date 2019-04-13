@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Game of Thrones</title>
+<link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/GOT_master.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+    <main>
+
+        <section>
+            <div id="introText">
+                <h1>Game of Thrones</h1>
+            </div>
+        </section>
+
+    <section id="imageContainer">
+    	<div id="houseImages" style="right: 0"> <!-- add in all of the images to make a scrolling banner -->
+    		<img src="images/stark.jpg"/>
+    		<img src="images/baratheon.jpg"/>
+    		<img src="images/lannister.jpg"/>
+    		<img src="images/tully.jpg"/>
+    		<img src="images/greyjoy.jpg"/>
+    		<img src="images/arryn.jpg"/>
+            <img src="images/targaryen.jpg"/>
+            <img src="images/frey.jpg"/>
+        </div>
+    </section>
+
+    <nav id="bottomNav">
+    	<ul id="navList">
+        	<!-- custom data attribute, allowing to pass custom data https://developer.mozilla.org/en/docs/Web/API/HTMLElement/dataset -->
+            <li><div class="sigil-container stark" data-offset="0"></div></li>
+            <li><div class="sigil-container baratheon" data-offset="1"></div></li>
+            <li><div class="sigil-container lannister" data-offset="2"></div></li>
+            <li><div class="sigil-container tully" data-offset="3"></div></li>
+            <li><div class="sigil-container greyjoy" data-offset="4"></div></li>
+            <li><div class="sigil-container arryn" data-offset="5"></div></li>
+            <li><div class="sigil-container targaryen" data-offset="6"></div></li>
+            <li><div class="sigil-container frey" data-offset="7"></div></li>
+        </ul>
+    </nav>
+    
+    <!-- replace this with the house name -->
+    <h1 class="house-name"><!-- clever tagline goes here --></h1>
+    
+    <!-- replace this with house details (github gist) -->
+    <p class="house-info">
+        <!-- replace this text with dynamic data -->
+    </p>
+</main>  <!--end mainContainer-->
+<!-- Add a light box here -->
+<section class="lightbox">
+    <span class="lightbox-close">X</span>
+    <!-- this will be dynamic shortly -->
+    <video src="video/House-Stark.mp4" muted autoplay controls></video>
+</section>
+
+<script src=https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+<script src="js/GOT_master.js"></script>
+</body>
+</html>
