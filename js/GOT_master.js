@@ -2,6 +2,9 @@
 	console.log('fired');
 
 
+	
+
+
 // Grab the sheildsat the bottom of the page
 	const shields = document.querySelectorAll('.sigil-container');
 		  lightBox = document.querySelector('.lightbox');
@@ -43,7 +46,6 @@
 		// stark becomes Stark -> first make a capital S, then add tark (or any house name)
 		let targetSrc = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1);
 
-		// change the paragraph text
 		houseName.textContent = `House ${targetSrc}`;
 
 		// this only ever retrieves the first index in the aray, which is the stark data
@@ -58,25 +60,21 @@
 	}
 	function closeLightbox() {
 		lightBox.classList.remove('lightbox-on');
-		// rewind the video to the beginning
-		// and also pause it
 		video.currentTime = 0;
 		video.pause();
 	}
 
+
+
 	function animateBanner() {
 		const offSet = 600; //this is the offset / width of one image
 
-	    // this is the total distance the iamages need to move as a pixel value
-	    // dataset.offset is coming from eaxh shield we click on
 	    
 	    totalOffset = this.dataset.offset * offSet + "px";
 	    houseInfo.textContent = houseData[this.dataset.offset][1];
 	    houseName.textContent = `House ${houseData[this.dataset.offset][0]}`;
-
-	    // set the style (css will animate this for us)
 	    banners.style.right = totalOffset;
-	    // TweenMax.to(banners, 0.8, { right: totalOffset });
+	    TweenMax.to(banners, 0.8, { right: totalOffset, easyOut });
 	}
 	    
 
@@ -85,4 +83,13 @@
 
 	video.addEventListener('ended', closeLightbox);
 	closeLB.addEventListener('click', closeLightbox);
+
+		// TweenLite.to(“#introText”, 2, {
+		//   left:100, 
+		//   top: 75, 
+		//   backgroundColor:"#000000", 
+		//   ease: Power4.easeIn
+		// });
+
+
 })();
